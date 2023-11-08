@@ -1,0 +1,21 @@
+.borderRadius{
+	border-radius: 100%;
+}
+
+.headStyle{
+	margin-bottom: 32px;
+}
+.center{	
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+.componentlist .component{
+	margin-bottom: 32px;
+}
+
+.noBottomMargin{
+	margin-bottom: 0px !important;
+}

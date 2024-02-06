@@ -18,7 +18,7 @@ export default function Home() {
 				<MyComponent />
 				{/*Component that has both props and states. myProp sets up the starting value for state.
 					If myProp is not defined then the state is assigned to 0*/}
-				<MyComponentWithStates myProp={12} />
+				<MyComponentWithStates myProp={8} />
 				<MyComponentWithStates />
 				
 				{/* Shared state */}

@@ -1,17 +1,25 @@
 'use client'
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from 'react';
 import styles from "../app/page.module.css"
 
 export default function myComponentReadFS() {
 	const [data, setData] = useState("nothing");
 	const [input, setInput] = useState("");
-	fetch("http://localhost:3000/api/GetText").then(a=>a.json().then(b=>setData(b.message.toString())));
+	// should probably use domainip as a state or prop??
+	let DomainIP: string;
+	
+	useEffect(() => {
+		DomainIP = document.location.origin.toString();
+		fetch(DomainIP+"/api/GetText").then(a=>a.json().then(b=>setData(b.message.toString())));
+	  }, [])
+	
+	
 	function sendAPICallGET(){
-		fetch("http://localhost:3000/api/GetText").then(a=>a.json().then(b=>setData(b.message.toString())));
+		fetch(DomainIP+"/api/GetText").then(a=>a.json().then(b=>setData(b.message.toString())));
 	}
 	async function sendAPICallPOST(){
-		await fetch('http://localhost:3000/api/SetText/', {
+		await fetch(DomainIP+'/api/SetText/', {
 		method: "POST",
 		mode: "cors",
 		headers: {

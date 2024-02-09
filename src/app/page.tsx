@@ -4,6 +4,7 @@ import MyComponent from '../components/myComponent'
 import MyComponentWithStates from '../components/myComponentWithStates'
 import MyComponentWithSharedStates from '../components/myComponentWithSharedStates'
 import MyComponentReadFS from '../components/myComponentReadFS'
+import MyComponentRedux from '@/components/myComponentRedux'
 
 export default function Home() {
   return (
@@ -26,6 +27,8 @@ export default function Home() {
 				
 				{/* Reads from server */}
 				<MyComponentReadFS />
+				
+				<MyComponentRedux/>
 			</div>
 		</main>
 		<footer>

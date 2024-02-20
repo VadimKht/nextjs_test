@@ -48,7 +48,7 @@ function MyReactComponent(){
         <p>{count}</p>
         <button onClick={()=>dispatch(counterSlice.actions.increment())}>incerment</button>
         <button onClick={()=>dispatch(counterSlice.actions.decrement())}>decrement</button>
-        <button onClick={()=>dispatch(incrementAsync(5))}>increment in 2 sec </button>
+        <button onClick={()=>dispatch(incrementAsync(5))}>increment 5 in 2 sec </button>
     </>
 }
 

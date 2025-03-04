@@ -1,0 +1,110 @@
+:root{
+    --color-border: #BACEBA;   
+    --color-text-bg: #2A3F4C;
+}
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    align-items:stretch;
+}
+
+.hover_button{
+    a{
+        display: flex;
+        height: 100%;
+        align-items: center;
+    }
+    :hover{
+        background-color: brown;
+        color: aquamarine;
+    }
+    :active{
+        color:black;
+    }
+}
+
+.navbar{
+    padding: 0px 32px;
+    line-height: 48px;
+    background-color: #757575;
+    border-radius: 8px;
+    margin-bottom: 24px;
+
+    .navbar__left__row {
+        height: auto;
+
+        ul {
+            list-style: none;
+        }
+        
+        .navbar__icon__container {
+            align-content: center;
+            margin: auto;
+            padding-right: 32px;
+            border-right: 4px var(--color-border) solid;
+            margin-right: 12px;
+            display:flex;
+        }
+    }
+
+    .navbar__nav__page{
+        align-content: center;
+        background-color: var(--color-text-bg);
+        border-left: 4px var(--color-border) solid;
+        border-right: 4px var(--color-border) solid;
+        border-radius: 16px;
+        a{
+            padding: 0 8px;
+            border-radius: 16px;
+        }
+        box-shadow: inset -5px -2px 6px #010A8E;
+        :active{
+            box-shadow: inset 5px 2px 6px #212AFE;
+        }
+        @extend .hover_button;
+    }
+
+    .navbar__switch__theme__btn {
+        margin: 0 12px;
+        
+        button{
+            border-radius: 32px;
+            padding: 0px 12px;
+            font-size: 1.4em;
+            max-width: 128px;
+        }
+    }
+
+    @media (max-width: 720px) {
+        .navbar__icon {
+            height: 32px;
+            width: 32px;
+        }
+        .navbar__nav__page {
+            max-height: 32px;
+            font-size: 12px;
+            a{
+                padding: 0px 0px;
+            }
+        }
+
+        .navbar__switch__theme__btn {
+            margin: 0 0px;
+            
+            button{
+                border-radius: 32px;
+                padding: 0px 12px;
+                font-size: 1.4em;
+                max-width: 64px;
+                font-size: 4px;
+            }
+        }
+    }
+}
+.Light{
+    .navbar{
+        background-color: #BABABA;
+        color: white;
+    }
+}

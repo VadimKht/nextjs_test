@@ -1,0 +1,17 @@
+.center{
+    text-align: center;
+}
+.projectslink{
+    color:#fa0000;
+
+    // doesn't work
+    :hover{
+        color:purple;
+    }
+}
+.projectslink:hover{
+    color: #cac202;
+}
+.projectslink:active{
+    color: #cac2F2;
+}

@@ -1,38 +1,15 @@
-import styles from './page.module.css'
-import Image  from 'next/image'
-import MyComponent from '../components/myComponent'
-import MyComponentWithStates from '../components/myComponentWithStates'
-import MyComponentWithSharedStates from '../components/myComponentWithSharedStates'
-import MyComponentReadFS from '../components/myComponentReadFS'
-import MyComponentRedux from '@/components/myComponentRedux'
+"use client"
+import { useAppSelector } from "@/lib/hooks";
+import "@/styles/mainpage.scss"
+import { useEffect, useState } from "react";
 
 export default function Home() {
+  const theme = useAppSelector((state) => state.value);
   return (
-    <>
-		<header className={[styles.center, styles.headStyle].join(" ")}>
-			<Image className={styles.borderRadius} src="/Untitled.png" width={200} height={200} alt="white"/>
-			<h1>my page</h1>
-		</header>
-		<main className={styles.center}>
-			<div className={styles.componentlist}>
-				{/*Basic component*/}
-				<MyComponent />
-				{/*Component that has both props and states. myProp sets up the starting value for state.
-					If myProp is not defined then the state is assigned to 0*/}
-				<MyComponentWithStates myProp={8} />
-				<MyComponentWithStates />
-				
-				{/* Shared state */}
-				<MyComponentWithSharedStates />
-				
-				{/* Reads from server */}
-				<MyComponentReadFS />
-				
-				<MyComponentRedux/>
-			</div>
-		</main>
-		<footer>
-		</footer>
-	</>
+    <div className="center">
+      {theme == "Dark" ? <>Theme is dark</> : <>Theme is light</>}
+      <h2>Welcome</h2>
+      <p>I have no idea what to put on here yet but you can check my <a className="projectslink" href="./projects">mini projects</a></p>
+    </div>
   )
 }

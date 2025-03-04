@@ -100,8 +100,22 @@ a {
   text-decoration: none;
 }
 
+.global__container {
+  margin: auto;
+  max-width: 1920px;
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
   }
+}
+
+.Light{
+  background: white;
+  color:black;
+}
+.Dark{
+  background: black;
+  color: white;
 }

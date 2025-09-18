@@ -29,6 +29,18 @@ export default function Projects() {
                 <a href="./builds/vue_project/" className="title">Vue build (backend cut, old project, unstable)</a> 
                 <p className="description">My old attempt to make comment section with authorization using vue and vue router, original version interacts with local mysql server, but setting it up is not easy</p>
               </li>
+              <li>
+                <a href="./hilel/homework14-main/pages/index.html" className="title">Hilel homework 14</a> 
+                <p className="description"></p>
+              </li>
+              <li>
+                <a href="./hilel/homework16-main/pages/index.html" className="title">Hilel homework 16</a> 
+                <p className="description"></p>
+              </li>
+              <li>
+                <a href="./hilel/hwfinal-main/pages/index.html" className="title">Hilel final homework</a> 
+                <p className="description"></p>
+              </li>
           </ul>
       </div>
     )

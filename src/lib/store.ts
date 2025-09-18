@@ -2,7 +2,8 @@ import { configureStore } from '@reduxjs/toolkit'
 import { themeSlice } from './features/DarkTheme/darkSlice'
 export const makeStore = () => {
   return configureStore({
-    reducer: themeSlice.reducer
+    // Object because we don't always have just one reducer!
+    reducer: {themeReducer: themeSlice.reducer}
   })
 }
 

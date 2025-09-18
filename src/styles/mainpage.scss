@@ -1,17 +1,20 @@
-.center{
+@use "colorpalette";
+
+.center__text{
     text-align: center;
 }
-.projectslink{
-    color:#fa0000;
 
-    // doesn't work
-    :hover{
-        color:purple;
-    }
+body{
+    background-color: black;
+    color: colorpalette.$fourth-color;
 }
-.projectslink:hover{
-    color: #cac202;
+
+.mainbody{
+    margin: 0 32px;
 }
-.projectslink:active{
-    color: #cac2F2;
+a{
+    color: #008000;
+}
+.Light a{
+    color: purple;
 }

@@ -1,3 +1,4 @@
+@import "mainpage.scss";
 
 .projects{
     color: #9A9A9A;
@@ -67,5 +68,11 @@
             width: 100%;
             font-size: 0.4em;
         }
+    }
+}
+.Light
+{
+    .projects{
+        color: black;
     }
 }

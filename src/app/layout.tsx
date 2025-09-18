@@ -4,6 +4,7 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import Navbar from '@/components/navbar'
 import StoreProvider from './StoreProvider'
+import { useEffect } from 'react'
 
 const inter = Inter({ subsets: ['latin'] })
 

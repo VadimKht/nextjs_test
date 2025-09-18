@@ -1,10 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit'
+import {cookies} from 'next/headers'
 
 export const themeSlice = createSlice({
   name: 'theme',
   initialState: {
-    // This conditional saves from trouble of it possibly being null. if it's null or anything else, then the theme will be DARK.
-    value: localStorage.getItem("state") == "Light" ? "Light" : "Dark",
+    value: "Dark"
   },
   reducers: {
     Switched: state => {

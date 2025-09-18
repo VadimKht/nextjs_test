@@ -2,7 +2,7 @@
 
 import "@/styles/navbar.scss"
 import Image from "next/image"
-import { useEffect } from "react"
+import { useEffect, useLayoutEffect, useMemo } from "react"
 import { Switched, SetVal, TestLog, themeSlice } from "@/lib/features/DarkTheme/darkSlice"
 import { useAppDispatch, useAppSelector, useAppStore } from "@/lib/hooks"
 
@@ -21,6 +21,8 @@ export default function Navbar()
     //  which makes it impossible to useAppSelector. additionally, there is a problem of the body having next js'
     //  class already, so i can't just assign className...
     useEffect(() => {
+        const theme = localStorage.getItem("state") == "Light" ? "Light" : "Dark";
+
         document.body.classList.remove(theme == "Dark" ? "Light" : "Dark");
         document.body.classList.add(theme);
 
@@ -32,7 +34,7 @@ export default function Navbar()
             NavbarElement.classList.add(theme);
         } 
     }, [theme]);
-    
+
     return <div className={`row navbar ${theme}`} id="navbar">
         <div className="row navbar__left__row">
             <div className="navbar__icon__container">

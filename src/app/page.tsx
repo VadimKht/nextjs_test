@@ -1,10 +1,11 @@
 "use client"
 import { useAppSelector } from "@/lib/hooks";
 import "@/styles/mainpage.scss"
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { ThemeContext } from "./layout";
 
 export default function Home() {
-  const theme = useAppSelector((state) => state.themeReducer.value);
+  const context = useContext(ThemeContext);
   return (
     <div className="pad-16 mainbody">
       <div className="center__text">

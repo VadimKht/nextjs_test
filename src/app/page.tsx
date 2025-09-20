@@ -1,6 +1,5 @@
 "use client"
-import { useAppSelector } from "@/lib/hooks";
-import "@/styles/mainpage.scss"
+import "@/styles/mainpage.scss";
 import { useContext, useEffect, useState } from "react";
 import { ThemeContext } from "./layout";
 

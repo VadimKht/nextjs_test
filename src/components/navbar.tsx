@@ -12,24 +12,21 @@ export default function Navbar()
     function ChangeTheme(){
         if(context.theme == "Dark")
         {
-            context.setTheme("Light")
             localStorage.setItem("theme", "Light");
+            context.setTheme("Light");
         }
         else{
-            context.setTheme("Dark");
             localStorage.setItem("theme", "Dark");
+            context.setTheme("Dark");
         }
     }
 
-    useLayoutEffect(()=>{
-        const thm = localStorage.getItem("theme");
-        thm == "Light" ? context.setTheme("Light") : context.setTheme("Dark");
-    }, [])
 
     //  Can't apply it in layout because layout puts the body inside the provider?
     //  which makes it impossible to useAppSelector. additionally, there is a problem of the body having next js'
     //  class already, so i can't just assign className...
     useEffect(() => {
+        
         document.body.classList.remove(context.theme == "Dark" ? "Light" : "Dark");
         document.body.classList.add(context.theme);
 
@@ -41,6 +38,12 @@ export default function Navbar()
             NavbarElement.classList.add(context.theme);
         } 
     }, [context.theme]);
+
+    useEffect(() => {
+        const theme = localStorage.getItem("theme") == "Light" ? "Light" : "Dark";
+        context.setTheme(theme);
+        document.body.classList.remove("loading");
+    }, []);
 
 
     return <div className={`row navbar ${context.theme}`} id="navbar">

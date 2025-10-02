@@ -16,9 +16,16 @@ a{
     color: #008000;
 }
 
+.links{
+    display: flex;
+    justify-content:space-between;
+    margin-top: 12px;
+}
+
 .project__item{
     display: flex;
     margin: 32px 10vw;
+
     img{
         margin-right: 64px;
     }
@@ -29,6 +36,7 @@ a{
         p{
             font-size: 24px;
         }
+        
     }
 }
 
